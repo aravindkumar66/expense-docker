@@ -1,0 +1,29 @@
+version: "3"
+networks:
+  expense:
+volumes:
+  mysql: #dockcer volume create mysql
+services:
+  mysql:
+    image:  aravindkumarreddy66/mysql:v1
+    container_name: mysql
+    volumes:
+    - mysql://var/lib/mysql #-v
+
+  backend:
+    image:  aravindkumarreddy66/backend:v1
+    container_name: backend
+    volumes:
+    - backend://var/lib/backend #-v
+
+  frontend:
+    image:  aravindkumarreddy66/frontend:v1
+    container_name: frontend
+    volumes:
+    - frontend://var/lib/frontend #-v
+    ports:
+    -80:80
+    depends_on:
+    - backend
+
+
