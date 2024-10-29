@@ -22,7 +22,7 @@ services:
     volumes:
     - frontend://var/lib/frontend #-v
     ports:
-    -80:80
+    - 80:80
     depends_on:
     - backend
 
