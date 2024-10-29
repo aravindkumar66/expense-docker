@@ -6,7 +6,7 @@ volumes:
 services:
   mysql:
     image:  aravindkumarreddy66/mysql:v1
-    container_name: mysqll
+    container_name: mysql
     volumes:
     - mysql://var/lib/mysql #-v
 
